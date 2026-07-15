@@ -1,0 +1,259 @@
+/* ==========================================================================
+   1. VARIABLES, RESET & SYSTEM FONTS
+   ========================================================================== */
+:root {
+    /* Farbpalette */
+    --color-dark-slate: #444444;
+    --color-bg-light: #f4f6f8;
+    --color-ice-turquoise: #a2c4c9;
+    --color-deep-sea: #488280;
+    --color-gold: #dba83d;
+    
+    /* Semantische Zuweisung */
+    --text-main: var(--color-dark-slate);
+    --bg-main: var(--color-bg-light);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Footer bleibt immer unten */
+}
+
+/* ==========================================================================
+   2. HEADER & FOOTER
+   ========================================================================== */
+.main-header {
+    background-color: var(--color-deep-sea);
+    color: #ffffff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    border-bottom: 3px solid var(--color-gold);
+}
+
+.header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header-desc {
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 1.1rem;
+}
+
+.main-footer {
+    background-color: var(--color-deep-sea);
+    color: #ffffff;
+    padding: 2rem 1rem;
+    margin-top: auto; /* Zwingt den Footer nach unten */
+    border-top: 3px solid var(--color-gold);
+}
+
+.footer-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between; /* Links und rechts verteilt */
+    align-items: center;
+    flex-wrap: wrap; /* Verhindert Überlappen auf Handys */
+    gap: 1rem;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--color-ice-turquoise);
+}
+
+.separator {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0 0.5rem;
+}
+
+/* ==========================================================================
+   3. STARTSEITE (HERO SECTION)
+   ========================================================================== */
+.hero-section {
+    padding: 3rem 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1; /* Füllt den Raum zwischen Header und Footer */
+}
+
+.hero-container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem; /* Großzügiger Abstand zwischen Bild und Text */
+}
+
+/* Linke Spalte: Bild-Box */
+.hero-image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-profile-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Leicht abgerundete Ecken */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Eleganter Schatten */
+}
+
+/* Rechte Spalte: Inhalt */
+.hero-content {
+    flex: 1.2; /* Text bekommt minimal mehr Platz als das Bild */
+}
+
+.hero-name {
+    font-size: 2.5rem;
+    color: var(--color-deep-sea);
+    margin-bottom: 0.5rem;
+}
+
+.hero-tagline {
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Teaser-Kacheln */
+.teaser-nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.teaser-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.teaser-card:hover {
+    transform: translateY(-3px); /* Schwebe-Effekt */
+    border-color: var(--color-ice-turquoise);
+}
+
+.teaser-card h3 {
+    color: var(--color-deep-sea);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.teaser-card span {
+    font-size: 0.9rem;
+    color: var(--color-gold);
+}
+
+/* ==========================================================================
+   4. UNTERSEITEN (SUB SECTIONS)
+   ========================================================================== */
+.sub-section {
+    padding: 3rem 1rem;
+    flex-grow: 1;
+}
+
+.sub-container {
+    max-width: 1200px; /* Textseiten lesen sich schmaler schöner */
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Zurück Button */
+.back-btn {
+    display: inline-block;
+    color: var(--color-deep-sea);
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+}
+
+.back-btn:hover {
+    color: var(--color-gold);
+}
+
+.sub-section h1 {
+    color: var(--color-deep-sea);
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.sub-intro {
+    font-size: 1.2rem;
+    color: var(--color-gold);
+    font-weight: 500;
+    margin-bottom: 2rem;
+}
+
+.content-text {
+    font-size: 1.1rem;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 6px;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* ==========================================================================
+   5. RESPONSIVE DESIGN (AUTOMATISCHER UMSRUNG)
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* Aus 2 Spalten (nebeneinander) wird 1 Spalte (untereinander) */
+    .hero-container {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .hero-profile-img {
+        max-width: 280px; /* Bild auf Handys kompakter halten */
+    }
+    
+    .teaser-nav {
+        flex-direction: column; /* Kacheln stapeln sich auf dem Smartphone */
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column; /* Footer-Inhalte stapeln */
+        text-align: center;
+    }
+}
