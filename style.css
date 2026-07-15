@@ -181,7 +181,6 @@ body {
     font-size: 0.9rem;
     color: var(--color-gold);
 }
-
 /* ==========================================================================
    4. UNTERSEITEN (SUB SECTIONS)
    ========================================================================== */
@@ -191,7 +190,7 @@ body {
 }
 
 .sub-container {
-    max-width: 1200px; /* Textseiten lesen sich schmaler schöner */
+    max-width: 1600px; /* Erweitert auf 1600px für maximale Bildwirkung */
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -202,7 +201,7 @@ body {
     color: var(--color-deep-sea);
     text-decoration: none;
     font-weight: 500;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     transition: color 0.2s;
 }
 
@@ -212,24 +211,17 @@ body {
 
 .sub-section h1 {
     color: var(--color-deep-sea);
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 0.5rem;
 }
 
 .sub-intro {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     color: var(--color-gold);
     font-weight: 500;
     margin-bottom: 2rem;
 }
 
-.content-text {
-    font-size: 1.1rem;
-    background: #ffffff;
-    padding: 2rem;
-    border-radius: 6px;
-    border: 1px solid rgba(0,0,0,0.05);
-}
 
 /* ==========================================================================
    5. RESPONSIVE DESIGN (AUTOMATISCHER UMSRUNG)
@@ -258,28 +250,33 @@ body {
     }
 }
 /* ==========================================================================
-   6. ANGEBOTS-GRID (FLACHES DESIGN - OPTIMIERTE BILDGRÖSSEN)
+   6. ANGEBOTS-GRID (RIESIGE BILDER IM HOCHFORMAT - MAXIMALER FOKUS)
    ========================================================================== */
 .offers-grid {
     display: flex;
     flex-direction: column;
-    gap: 4rem; 
-    margin-top: 2rem;
+    gap: 2rem; /* Abstand zwischen den drei Abschnitten */
+    margin-top: 0; /* Auf 0 gesetzt, da die Überschrift auf dieser Seite fehlt */
+}
+
+/* Entfernt das obere Padding NUR bei der ersten Zeile (Speakerin) */
+.offer-row:first-child {
+    padding-top: 0;
 }
 
 .offer-row {
     display: flex;
-    align-items: center; /* Zentriert Bild und Text vertikal zueinander */
-    gap: 5rem; /* Großzügiger Abstand zwischen Text und Bild */
-    padding: 3rem 0; 
+    align-items: center; 
+    gap: 5rem; /* Großzügiger Freiraum zwischen Bild und Text */
+    padding: 0.5rem 0 3rem 0; 
 }
 
-/* Edle Trennlinie zwischen den Reihen */
+/* Edle Trennlinie */
 .offer-row:not(:last-child) {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Ausrichtung der Reihen */
+/* Ausrichtung */
 .row-normal {
     flex-direction: row;
 }
@@ -288,76 +285,80 @@ body {
     flex-direction: row-reverse;
 }
 
-/* Die Spalten auf perfektes 1:1 Verhältnis gesetzt */
+/* Platzverteilung: Ausgeglichenes Verhältnis */
 .offer-text {
-    flex: 1; /* Gleichmäßige Aufteilung */
+    flex: 1.2; /* Der Text bekommt wieder minimal mehr Platz */
 }
 
 .offer-image {
-    flex: 1; /* Gleichmäßige Aufteilung */
+    flex: 0.8; /* Das Bild ist kompakt und hochkant */
     display: flex;
     justify-content: center;
 }
 
 .offer-image img {
     width: 100%;
-    max-width: 500px; /* Erhöht von vorherigen Limitierungen für stärkere Präsenz */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Etwas tieferer Schatten für größere Bilder */
-    object-fit: cover;
+    max-width: 420px; /* Perfekte Breite für ein Hochkant-Portrait */
+    
+    /* Der Hochformat-Zaubertrick: */
+    aspect-ratio: 3 / 4; /* Erzwingt ein klassisches 3:4 Hochformat */
+    object-fit: cover;   /* Schneidet das Bild perfekt zu, ohne Verzerrung */
+    object-position: center 20%; /* Fokussiert das Gesicht bei Porträts etwas weiter oben */
+    
+    border-radius: 12px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12); 
 }
 
 /* Textelemente */
 .offer-text h2 {
     color: var(--color-deep-sea);
-    font-size: 2.4rem; /* Leicht vergrößert passend zum Bild */
-    margin-bottom: 0.5rem;
+    font-size: 2.6rem; 
+    margin-bottom: 0.8rem;
     display: inline-block;
 }
 
 .offer-text h3 {
     color: var(--color-gold);
-    font-size: 1.3rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.8rem;
     font-weight: 500;
 }
 
 .offer-text p {
-    margin-bottom: 1.2rem;
-    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
 }
 
 /* Listen-Styling */
 .offer-list {
     list-style-type: none;
-    margin: 1rem 0 1.5rem 0;
+    margin: 1.5rem 0 2rem 0;
     padding-left: 0;
 }
 
 .offer-list li {
     position: relative;
-    padding-left: 1.5rem;
-    margin-bottom: 0.5rem;
-    font-size: 1.05rem;
+    padding-left: 1.8rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.1rem;
 }
 
 .offer-list li::before {
     content: "•";
     color: var(--color-gold);
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     position: absolute;
     left: 0;
-    top: -2px;
+    top: -3px;
 }
-
 /* ==========================================================================
    7. RESPONSIVE DESIGN FÜR ANGEBOTE
    ========================================================================== */
-@media (max-width: 960px) {
+@media (max-width: 1100px) {
     .offer-row {
-        gap: 2.5rem;
-        padding: 2rem 0;
+        gap: 3rem;
+        padding: 3rem 0;
     }
 
     .row-normal {
@@ -373,7 +374,7 @@ body {
     }
     
     .offer-image img {
-        max-width: 380px; /* Auf Tablets und Handys jetzt auch etwas größer */
+        max-width: 500px; /* Auf großen Tablets auch noch sehr präsent */
     }
     
     .offer-text {
@@ -389,4 +390,66 @@ body {
         text-align: left;
         display: inline-block;
     }
+}
+/* ==========================================================================
+   8. ÜBER MICH SEITE (PUR & MIT SEITENHINTERGRUND)
+   ========================================================================== */
+.about-page-bg {
+    /* Wichtig: Das große "H" bei Hintergrundbild! */
+    background-image: linear-gradient(rgba(244, 246, 248, 0.45), rgba(244, 246, 248, 0.45)), 
+                      url('img/Hintergrundbild.webp'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Parallax-Effekt: Bild bleibt beim Scrollen fixiert */
+    min-height: 100vh; /* Füllt das gesamte Browserfenster */
+    padding: 3rem 1rem !important;
+}
+
+/* Einfacher, transparenter Textbereich ohne störende Boxen */
+.about-plain-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+/* Überschriften */
+.about-plain-content h1 {
+    color: var(--color-deep-sea);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.about-plain-content h2 {
+    font-size: 1.5rem;
+    color: var(--color-gold);
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+}
+
+/* Fließtext - plain in deinem dunklen Slate-Ton */
+.about-plain-content p {
+    color: var(--color-dark-slate);
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 1.8rem;
+}
+
+/* Zitat-Bereich unten */
+.about-plain-quote {
+    margin-top: 3.5rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(72, 130, 128, 0.2);
+}
+
+.about-plain-quote .quote-en {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--color-deep-sea);
+    margin-bottom: 0.5rem;
+}
+
+.about-plain-quote .quote-de {
+    font-size: 1.15rem;
+    color: var(--color-dark-slate);
 }
