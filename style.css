@@ -257,3 +257,136 @@ body {
         text-align: center;
     }
 }
+/* ==========================================================================
+   6. ANGEBOTS-GRID (FLACHES DESIGN - OPTIMIERTE BILDGRÖSSEN)
+   ========================================================================== */
+.offers-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; 
+    margin-top: 2rem;
+}
+
+.offer-row {
+    display: flex;
+    align-items: center; /* Zentriert Bild und Text vertikal zueinander */
+    gap: 5rem; /* Großzügiger Abstand zwischen Text und Bild */
+    padding: 3rem 0; 
+}
+
+/* Edle Trennlinie zwischen den Reihen */
+.offer-row:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Ausrichtung der Reihen */
+.row-normal {
+    flex-direction: row;
+}
+
+.row-reverse {
+    flex-direction: row-reverse;
+}
+
+/* Die Spalten auf perfektes 1:1 Verhältnis gesetzt */
+.offer-text {
+    flex: 1; /* Gleichmäßige Aufteilung */
+}
+
+.offer-image {
+    flex: 1; /* Gleichmäßige Aufteilung */
+    display: flex;
+    justify-content: center;
+}
+
+.offer-image img {
+    width: 100%;
+    max-width: 500px; /* Erhöht von vorherigen Limitierungen für stärkere Präsenz */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Etwas tieferer Schatten für größere Bilder */
+    object-fit: cover;
+}
+
+/* Textelemente */
+.offer-text h2 {
+    color: var(--color-deep-sea);
+    font-size: 2.4rem; /* Leicht vergrößert passend zum Bild */
+    margin-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.offer-text h3 {
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.offer-text p {
+    margin-bottom: 1.2rem;
+    font-size: 1.05rem;
+}
+
+/* Listen-Styling */
+.offer-list {
+    list-style-type: none;
+    margin: 1rem 0 1.5rem 0;
+    padding-left: 0;
+}
+
+.offer-list li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.offer-list li::before {
+    content: "•";
+    color: var(--color-gold);
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+
+/* ==========================================================================
+   7. RESPONSIVE DESIGN FÜR ANGEBOTE
+   ========================================================================== */
+@media (max-width: 960px) {
+    .offer-row {
+        gap: 2.5rem;
+        padding: 2rem 0;
+    }
+
+    .row-normal {
+        flex-direction: column-reverse; 
+    }
+
+    .row-reverse {
+        flex-direction: column-reverse;
+    }
+    
+    .offer-image {
+        width: 100%;
+    }
+    
+    .offer-image img {
+        max-width: 380px; /* Auf Tablets und Handys jetzt auch etwas größer */
+    }
+    
+    .offer-text {
+        text-align: center;
+    }
+    
+    .offer-text h2 {
+        display: block;
+        margin: 0 auto 1rem auto;
+    }
+
+    .offer-list {
+        text-align: left;
+        display: inline-block;
+    }
+}
